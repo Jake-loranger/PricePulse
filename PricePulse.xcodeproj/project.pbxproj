@@ -9,13 +9,22 @@
 /* Begin PBXBuildFile section */
 		A184D3942C14BB8100AA81BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3932C14BB8100AA81BD /* AppDelegate.swift */; };
 		A184D3962C14BB8100AA81BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3952C14BB8100AA81BD /* SceneDelegate.swift */; };
-		A184D3982C14BB8100AA81BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3972C14BB8100AA81BD /* ViewController.swift */; };
+		A184D3982C14BB8100AA81BD /* PPSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3972C14BB8100AA81BD /* PPSearchVC.swift */; };
 		A184D39E2C14BB8100AA81BD /* PricePulse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A184D39C2C14BB8100AA81BD /* PricePulse.xcdatamodeld */; };
 		A184D3A02C14BB8300AA81BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A184D39F2C14BB8300AA81BD /* Assets.xcassets */; };
 		A184D3A32C14BB8300AA81BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A184D3A12C14BB8300AA81BD /* LaunchScreen.storyboard */; };
 		A184D3AE2C14BB8300AA81BD /* PricePulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3AD2C14BB8300AA81BD /* PricePulseTests.swift */; };
 		A184D3B82C14BB8300AA81BD /* PricePulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3B72C14BB8300AA81BD /* PricePulseUITests.swift */; };
 		A184D3BA2C14BB8300AA81BD /* PricePulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3B92C14BB8300AA81BD /* PricePulseUITestsLaunchTests.swift */; };
+		A184D3C82C14CC2700AA81BD /* PPFavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3C72C14CC2700AA81BD /* PPFavoritesVC.swift */; };
+		A184D3CA2C16008400AA81BD /* PPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3C92C16008400AA81BD /* PPTextField.swift */; };
+		A184D3CC2C16091E00AA81BD /* PPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3CB2C16091E00AA81BD /* PPTitleLabel.swift */; };
+		A184D3D02C160B4100AA81BD /* PPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3CF2C160B4100AA81BD /* PPButton.swift */; };
+		A184D3D22C1610E000AA81BD /* AssetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3D12C1610E000AA81BD /* AssetVC.swift */; };
+		A184D3D42C16199D00AA81BD /* UIViewControllers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3D32C16199D00AA81BD /* UIViewControllers+Ext.swift */; };
+		A184D3D82C161ACB00AA81BD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3D72C161ACB00AA81BD /* NetworkManager.swift */; };
+		A184D3DB2C161CA600AA81BD /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3DA2C161CA600AA81BD /* Asset.swift */; };
+		A184D3DD2C1623FA00AA81BD /* PPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3DC2C1623FA00AA81BD /* PPError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +48,7 @@
 		A184D3902C14BB8100AA81BD /* PricePulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PricePulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A184D3932C14BB8100AA81BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A184D3952C14BB8100AA81BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A184D3972C14BB8100AA81BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A184D3972C14BB8100AA81BD /* PPSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSearchVC.swift; sourceTree = "<group>"; };
 		A184D39D2C14BB8100AA81BD /* PricePulse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PricePulse.xcdatamodel; sourceTree = "<group>"; };
 		A184D39F2C14BB8300AA81BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A184D3A22C14BB8300AA81BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,15 @@
 		A184D3B32C14BB8300AA81BD /* PricePulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PricePulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A184D3B72C14BB8300AA81BD /* PricePulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePulseUITests.swift; sourceTree = "<group>"; };
 		A184D3B92C14BB8300AA81BD /* PricePulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A184D3C72C14CC2700AA81BD /* PPFavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFavoritesVC.swift; sourceTree = "<group>"; };
+		A184D3C92C16008400AA81BD /* PPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTextField.swift; sourceTree = "<group>"; };
+		A184D3CB2C16091E00AA81BD /* PPTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTitleLabel.swift; sourceTree = "<group>"; };
+		A184D3CF2C160B4100AA81BD /* PPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPButton.swift; sourceTree = "<group>"; };
+		A184D3D12C1610E000AA81BD /* AssetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetVC.swift; sourceTree = "<group>"; };
+		A184D3D32C16199D00AA81BD /* UIViewControllers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Ext.swift"; sourceTree = "<group>"; };
+		A184D3D72C161ACB00AA81BD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A184D3DA2C161CA600AA81BD /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		A184D3DC2C1623FA00AA81BD /* PPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +117,14 @@
 		A184D3922C14BB8100AA81BD /* PricePulse */ = {
 			isa = PBXGroup;
 			children = (
-				A184D3972C14BB8100AA81BD /* ViewController.swift */,
+				A184D3D92C161C4300AA81BD /* Models */,
+				A184D3D62C161AB300AA81BD /* Managers */,
+				A184D3D52C161AA000AA81BD /* Extensions */,
+				A184D3CE2C160B1600AA81BD /* ViewControllers */,
+				A184D3CD2C160B1100AA81BD /* Views */,
 				A184D3C62C14BBC300AA81BD /* Support */,
 				A184D3A42C14BB8300AA81BD /* Info.plist */,
+				A184D3DC2C1623FA00AA81BD /* PPError.swift */,
 			);
 			path = PricePulse;
 			sourceTree = "<group>";
@@ -133,6 +156,50 @@
 				A184D3952C14BB8100AA81BD /* SceneDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		A184D3CD2C160B1100AA81BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A184D3C92C16008400AA81BD /* PPTextField.swift */,
+				A184D3CB2C16091E00AA81BD /* PPTitleLabel.swift */,
+				A184D3CF2C160B4100AA81BD /* PPButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A184D3CE2C160B1600AA81BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A184D3C72C14CC2700AA81BD /* PPFavoritesVC.swift */,
+				A184D3972C14BB8100AA81BD /* PPSearchVC.swift */,
+				A184D3D12C1610E000AA81BD /* AssetVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A184D3D52C161AA000AA81BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A184D3D32C16199D00AA81BD /* UIViewControllers+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A184D3D62C161AB300AA81BD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A184D3D72C161ACB00AA81BD /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A184D3D92C161C4300AA81BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A184D3DA2C161CA600AA81BD /* Asset.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A184D3982C14BB8100AA81BD /* ViewController.swift in Sources */,
+				A184D3982C14BB8100AA81BD /* PPSearchVC.swift in Sources */,
 				A184D3942C14BB8100AA81BD /* AppDelegate.swift in Sources */,
+				A184D3D22C1610E000AA81BD /* AssetVC.swift in Sources */,
+				A184D3CC2C16091E00AA81BD /* PPTitleLabel.swift in Sources */,
+				A184D3D82C161ACB00AA81BD /* NetworkManager.swift in Sources */,
+				A184D3D42C16199D00AA81BD /* UIViewControllers+Ext.swift in Sources */,
+				A184D3DB2C161CA600AA81BD /* Asset.swift in Sources */,
+				A184D3C82C14CC2700AA81BD /* PPFavoritesVC.swift in Sources */,
+				A184D3DD2C1623FA00AA81BD /* PPError.swift in Sources */,
+				A184D3CA2C16008400AA81BD /* PPTextField.swift in Sources */,
+				A184D3D02C160B4100AA81BD /* PPButton.swift in Sources */,
 				A184D3962C14BB8100AA81BD /* SceneDelegate.swift in Sources */,
 				A184D39E2C14BB8100AA81BD /* PricePulse.xcdatamodeld in Sources */,
 			);
