@@ -47,6 +47,7 @@ class PPSearchVC: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.text = "PricePulse"
+        titleLabel.textColor = .systemBlue
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
@@ -93,7 +94,7 @@ class PPSearchVC: UIViewController {
             return
         }
         
-        let assetVC = AssetVC()
+        let assetVC = PPAssetVC()
         assetVC.assetName = assetTextField.text
         navigationController?.pushViewController(assetVC, animated: true)
     }

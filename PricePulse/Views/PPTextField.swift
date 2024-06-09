@@ -26,7 +26,7 @@ class PPTextField: UITextField {
         textColor = .label
         font = UIFont.preferredFont(forTextStyle: .title2)
         textAlignment = .center
-        placeholder = "Enter an Asset name"
+        placeholder = "Enter an asset symbol"
         returnKeyType = .go
     }
 

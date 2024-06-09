@@ -20,9 +20,7 @@ class PPTitleLabel: UILabel {
     
     private func configure() {
         textAlignment = .center
-        textColor = .systemBlue
         adjustsFontSizeToFitWidth = true
-
         font = UIFont.systemFont(ofSize: CGFloat(52), weight: .bold)
     }
 
