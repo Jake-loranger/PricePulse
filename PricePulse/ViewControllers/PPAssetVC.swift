@@ -18,9 +18,43 @@ class PPAssetVC: UIViewController {
         fetchAssetData(for: assetName)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func configureViewController() {
         view.backgroundColor = .systemBackground
-        navigationController?.isNavigationBarHidden = false
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func addButtonTapped() {
+        showLoadingView()
+        
+        NetworkManager.shared.getAssetData(for: assetName) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let asset):
+                PersistanceManager.updateFavoritesWith(favorite: asset, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    
+                    guard let error = error else {
+                        self.presentErrorOnMainThread(title: "Success!", message: "Asset was saved to favorites", buttonTitle: "Ok")
+                        return
+                    }
+                    
+                    self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                }
+                
+            case .failure(let error):
+                self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                return
+            }
+        }
     }
     
     private func fetchAssetData(for assetName: String) {

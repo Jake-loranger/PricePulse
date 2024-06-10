@@ -12,4 +12,6 @@ enum PPError: String, Error {
     case unableToComplete = "Unable to complete request. Check your internet connection"
     case invalidResponse = "Invalid response from the server. Please try again."
     case invalidData = "The data recieved from the server was invalid. Please try again."
+    case unableToFavorite = "Unable to favorite this asset. Please try again."
+    case alreadyInFavorites = "This asset is already in the favorites."
 }

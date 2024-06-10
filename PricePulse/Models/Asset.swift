@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Asset: Codable {
+struct Asset: Codable, Hashable {
     let data: [String: AssetData]
 }
 
-struct AssetData: Codable {
+struct AssetData: Codable, Hashable {
     let name: String
     let symbol: String
     let circulatingSupply: Double
@@ -29,11 +29,11 @@ struct AssetData: Codable {
     }
 }
 
-struct Quote: Codable {
+struct Quote: Codable, Hashable  {
     let USD: USD
 }
 
-struct USD: Codable {
+struct USD: Codable, Hashable {
     let price: Double
     let volume24h: Double
     let volumeChange24h: Double
