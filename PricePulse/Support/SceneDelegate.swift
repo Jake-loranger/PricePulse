@@ -11,67 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = createTabBar()
+        window?.rootViewController = PPTabBarController()
         window?.makeKeyAndVisible()
-        
-    }
-    
-    func createFavoritesVC() -> UINavigationController {
-        let favoritesVC = PPFavoritesVC()
-        favoritesVC.title = "Favorites"
-        favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        
-        let favoritesNC = UINavigationController(rootViewController: favoritesVC)
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground
-        
-        favoritesNC.navigationBar.standardAppearance = appearance
-        favoritesNC.navigationBar.scrollEdgeAppearance = appearance
-        favoritesNC.navigationBar.compactAppearance = appearance
-        favoritesNC.navigationBar.tintColor = .systemBlue
-        
-        
-        return favoritesNC
-    }
-    
-    func createSearchVC() -> UINavigationController {
-        let searchVC = PPSearchVC()
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        
-        let searchNC = UINavigationController(rootViewController: searchVC)
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground
-        
-        searchNC.navigationBar.standardAppearance = appearance
-        searchNC.navigationBar.scrollEdgeAppearance = appearance
-        searchNC.navigationBar.compactAppearance = appearance
-        searchNC.navigationBar.tintColor = .systemBlue
-        
-        return searchNC
-    }
-    
-    func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        
-        let appearance = UITabBarAppearance()
-        appearance.backgroundColor = .systemBackground
-        
-        UITabBar.appearance().tintColor = .systemBlue
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
-        
-        tabBar.viewControllers = [createSearchVC(), createFavoritesVC()]
-        
-        return tabBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

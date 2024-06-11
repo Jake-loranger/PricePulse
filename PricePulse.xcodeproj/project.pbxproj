@@ -28,6 +28,8 @@
 		A184D3DF2C16529900AA81BD /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3DE2C16529900AA81BD /* Double+Ext.swift */; };
 		A184D3E22C17806300AA81BD /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3E12C17806300AA81BD /* PersistanceManager.swift */; };
 		A184D3E52C17A2E900AA81BD /* PPFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */; };
+		A184D3E72C18DB3500AA81BD /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */; };
+		A19028292C190FAB007C3644 /* PPAssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19028282C190FAB007C3644 /* PPAssetDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		A184D3DE2C16529900AA81BD /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		A184D3E12C17806300AA81BD /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFavoriteCell.swift; sourceTree = "<group>"; };
+		A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTabBarController.swift; sourceTree = "<group>"; };
+		A19028282C190FAB007C3644 /* PPAssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAssetDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 				A184D3CB2C16091E00AA81BD /* PPTitleLabel.swift */,
 				A184D3CF2C160B4100AA81BD /* PPButton.swift */,
 				A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */,
+				A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */,
+				A19028282C190FAB007C3644 /* PPAssetDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				A184D3D22C1610E000AA81BD /* PPAssetVC.swift in Sources */,
 				A184D3CC2C16091E00AA81BD /* PPTitleLabel.swift in Sources */,
 				A184D3DF2C16529900AA81BD /* Double+Ext.swift in Sources */,
+				A19028292C190FAB007C3644 /* PPAssetDetailView.swift in Sources */,
 				A184D3D82C161ACB00AA81BD /* NetworkManager.swift in Sources */,
 				A184D3D42C16199D00AA81BD /* UIViewControllers+Ext.swift in Sources */,
 				A184D3DB2C161CA600AA81BD /* Asset.swift in Sources */,
@@ -363,6 +370,7 @@
 				A184D3CA2C16008400AA81BD /* PPTextField.swift in Sources */,
 				A184D3D02C160B4100AA81BD /* PPButton.swift in Sources */,
 				A184D3E52C17A2E900AA81BD /* PPFavoriteCell.swift in Sources */,
+				A184D3E72C18DB3500AA81BD /* PPTabBarController.swift in Sources */,
 				A184D3962C14BB8100AA81BD /* SceneDelegate.swift in Sources */,
 				A184D39E2C14BB8100AA81BD /* PricePulse.xcdatamodeld in Sources */,
 			);
