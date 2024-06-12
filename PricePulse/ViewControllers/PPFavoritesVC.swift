@@ -26,7 +26,6 @@ class PPFavoritesVC: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "Favorites"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func configureTableView() {

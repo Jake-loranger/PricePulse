@@ -30,6 +30,8 @@
 		A184D3E52C17A2E900AA81BD /* PPFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */; };
 		A184D3E72C18DB3500AA81BD /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */; };
 		A19028292C190FAB007C3644 /* PPAssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19028282C190FAB007C3644 /* PPAssetDetailView.swift */; };
+		A190282B2C1A27C6007C3644 /* PPCellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */; };
+		A190282D2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFavoriteCell.swift; sourceTree = "<group>"; };
 		A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTabBarController.swift; sourceTree = "<group>"; };
 		A19028282C190FAB007C3644 /* PPAssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAssetDetailView.swift; sourceTree = "<group>"; };
+		A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCellTitleLabel.swift; sourceTree = "<group>"; };
+		A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCellPriceChangeTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 				A184D3E42C17A2E900AA81BD /* PPFavoriteCell.swift */,
 				A184D3E62C18DB3500AA81BD /* PPTabBarController.swift */,
 				A19028282C190FAB007C3644 /* PPAssetDetailView.swift */,
+				A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */,
+				A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,8 +372,10 @@
 				A184D3D42C16199D00AA81BD /* UIViewControllers+Ext.swift in Sources */,
 				A184D3DB2C161CA600AA81BD /* Asset.swift in Sources */,
 				A184D3C82C14CC2700AA81BD /* PPFavoritesVC.swift in Sources */,
+				A190282B2C1A27C6007C3644 /* PPCellTitleLabel.swift in Sources */,
 				A184D3DD2C1623FA00AA81BD /* PPError.swift in Sources */,
 				A184D3CA2C16008400AA81BD /* PPTextField.swift in Sources */,
+				A190282D2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift in Sources */,
 				A184D3D02C160B4100AA81BD /* PPButton.swift in Sources */,
 				A184D3E52C17A2E900AA81BD /* PPFavoriteCell.swift in Sources */,
 				A184D3E72C18DB3500AA81BD /* PPTabBarController.swift in Sources */,
@@ -539,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C7H6LPRHA;
@@ -566,6 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C7H6LPRHA;

@@ -20,6 +20,7 @@ class PPAssetVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         navigationController?.isNavigationBarHidden = false
     }
     
@@ -149,9 +150,6 @@ class PPAssetVC: UIViewController {
         let marketCapView = PPAssetDetailView(detailLabel: "Market Cap", detailValue: marketCapValue)
         view.addSubview(marketCapView)
         
-        print(formattedPrice)
-        print(marketCap)
-        
         NSLayoutConstraint.activate([
             marketCapView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 145),
             marketCapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
@@ -161,7 +159,7 @@ class PPAssetVC: UIViewController {
     
     func configureSupplyView(circulatingSupply: Double) {
         let formattedPrice = circulatingSupply.formatToPriceString(double: circulatingSupply)
-        let circulatingSupplyValue = "%\(formattedPrice ?? "")"
+        let circulatingSupplyValue = "\(formattedPrice ?? "N/A")%"
         let circulatingSupplyView = PPAssetDetailView(detailLabel: "Circulating Supply", detailValue: circulatingSupplyValue)
         view.addSubview(circulatingSupplyView)
         
