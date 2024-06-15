@@ -14,4 +14,5 @@ enum PPError: String, Error {
     case invalidData = "The data recieved from the server was invalid. Please try again."
     case unableToFavorite = "Unable to favorite this asset. Please try again."
     case alreadyInFavorites = "This asset is already in the favorites."
+    case unableToRetrieveFavorite = "Unable to retrieve favorites data for user defaults"
 }

@@ -18,7 +18,7 @@ enum PersistanceManager {
         static let favorites = "favorites"
     }
     
-    static func updateFavoritesWith(favorite: Asset, actionType: PersistanceActionType, completed: @escaping (PPError?) -> Void) {
+    static func updateFavoritesWith(favorite: FavoriteAsset, actionType: PersistanceActionType, completed: @escaping (PPError?) -> Void) {
         retrieveFavoritesAssets { result in
             switch result {
             case .success(let favorites):
@@ -33,7 +33,7 @@ enum PersistanceManager {
                     retreievedFavorites.append(favorite)
                     
                 case .remove:
-                    retreievedFavorites.removeAll { $0.data.values.first?.name == favorite.data.values.first?.name}
+                    retreievedFavorites.removeAll { $0.symbol == favorite.symbol}
                 }
                 
                 completed(save(favorites: retreievedFavorites))
@@ -44,7 +44,7 @@ enum PersistanceManager {
         }
     }
     
-    static func save(favorites: [Asset]) -> PPError? {
+    static func save(favorites: [FavoriteAsset]) -> PPError? {
         do {
             let encoder = JSONEncoder()
             let favorites = try encoder.encode(favorites)
@@ -55,7 +55,7 @@ enum PersistanceManager {
         }
     }
     
-    static func retrieveFavoritesAssets(completed: @escaping (Result<[Asset], PPError>) -> Void) {
+    static func retrieveFavoritesAssets(completed: @escaping (Result<[FavoriteAsset], PPError>) -> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completed(.success([]))
             return
@@ -63,10 +63,10 @@ enum PersistanceManager {
         
         do {
             let decoder = JSONDecoder()
-            let favorites = try decoder.decode([Asset].self, from: favoritesData)
+            let favorites = try decoder.decode([FavoriteAsset].self, from: favoritesData)
             completed(.success(favorites))
         } catch {
-            completed(.failure(.unableToFavorite))
+            completed(.failure(.unableToRetrieveFavorite))
         }
     }
 }

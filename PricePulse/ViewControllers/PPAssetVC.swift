@@ -33,30 +33,17 @@ class PPAssetVC: UIViewController {
     
     
     @objc func addButtonTapped() {
-        showLoadingView()
+        let favoriteAsset = FavoriteAsset(symbol: assetName)
         
-        NetworkManager.shared.getAssetData(for: assetName) { [weak self] result in
+        PersistanceManager.updateFavoritesWith(favorite: favoriteAsset, actionType: .add) { [weak self] error in
             guard let self = self else { return }
             
-            self.dismissLoadingView()
-            
-            switch result {
-            case .success(let asset):
-                PersistanceManager.updateFavoritesWith(favorite: asset, actionType: .add) { [weak self] error in
-                    guard let self = self else { return }
-                    
-                    guard let error = error else {
-                        self.presentErrorOnMainThread(title: "Success!", message: "Asset was saved to favorites", buttonTitle: "Ok")
-                        return
-                    }
-                    
-                    self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-                }
-                
-            case .failure(let error):
-                self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            guard let error = error else {
+                self.presentErrorOnMainThread(title: "Success!", message: "Asset was saved to favorites", buttonTitle: "Ok")
                 return
             }
+            
+            self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
         }
     }
     
