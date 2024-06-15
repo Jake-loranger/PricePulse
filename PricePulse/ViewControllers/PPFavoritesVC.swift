@@ -11,7 +11,6 @@ class PPFavoritesVC: UIViewController {
     
     let tableView = UITableView()
     var favorites: [FavoriteAsset] = []
-    var favoritesData: [Asset] = []
     let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -22,7 +21,7 @@ class PPFavoritesVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refreshFavoritesData()
+        getFavorites()
     }
     
     private func configureViewController() {
@@ -49,7 +48,7 @@ class PPFavoritesVC: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let assets):
-                self.favorites = assets
+                self.favorites = assets.sorted { $0.symbol < $1.symbol }
                 return
             case .failure(let error):
                 self.presentErrorOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -61,48 +60,31 @@ class PPFavoritesVC: UIViewController {
     
     @objc private func refreshFavoritesData() {
         getFavorites()
-        favoritesData.removeAll()
-
-        for favorite in favorites {
-            NetworkManager.shared.getAssetData(for: favorite.symbol) { [weak self] result in
-                guard let self = self else { return }
-
-                switch result {
-                case .success(let asset):
-                    self.favoritesData.append(asset)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView)
-                        self.refreshControl.endRefreshing()
-                    }
-                    return
-                case .failure(let error):
-                    self.presentErrorOnMainThread(title: "Error", message: error.rawValue, buttonTitle: "Ok")
-                    return
-                }
-            }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.view.bringSubviewToFront(self.tableView)
+            self.refreshControl.endRefreshing()
         }
     }
 }
 
 extension PPFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoritesData.count
+        return favorites.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PPFavoriteCell.reuseID) as! PPFavoriteCell
-        let favoriteData = favoritesData[indexPath.row]
-        cell.set(with: favoriteData)
+        let favorite = favorites[indexPath.row]
+        cell.set(with: favorite)
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        /* Right now, the incorect asset is being deleted from userDefaults because the Cell's favoriteAsset indexRow is different than the cells favoriteData indexRow */
         let favorite = favorites[indexPath.row]
-        favoritesData.remove(at: indexPath.row)
+        favorites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
         
         PersistanceManager.updateFavoritesWith(favorite: favorite, actionType: .remove) { [weak self] error in

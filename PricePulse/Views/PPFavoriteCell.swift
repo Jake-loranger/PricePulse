@@ -52,25 +52,40 @@ class PPFavoriteCell: UITableViewCell {
         ])
     }
     
-    func set(with asset: Asset) {
-        assetName.text = asset.data.values.first?.name
-        
-        let assetPriceValue = asset.data.values.first?.quote.USD.price
-        let assetPriceString = assetPriceValue?.formatToPriceString(double: assetPriceValue ?? 0.00)
-        assetPrice.text = "$" + (assetPriceString ?? "n/a")
-        
-        guard let assetPriceChangeValue = asset.data.values.first?.quote.USD.percentChange24h else {
-            assetPriceChange.text = "N/A"
-            return
+    func set(with favorite: FavoriteAsset) {
+        NetworkManager.shared.getAssetData(for: favorite.symbol) { [weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let asset):
+                DispatchQueue.main.async {
+                    self.assetName.text = asset.data.values.first?.name
+                    
+                    let assetPriceValue = asset.data.values.first?.quote.USD.price
+                    let assetPriceString = assetPriceValue?.formatToPriceString(double: assetPriceValue ?? 0.00)
+                    self.assetPrice.text = "$" + (assetPriceString ?? "n/a")
+                    
+                    guard let assetPriceChangeValue = asset.data.values.first?.quote.USD.percentChange24h else {
+                        self.assetPriceChange.text = "N/A"
+                        return
+                    }
+                    
+                    self.assetPriceChange.text =  String(format: "%.2f", assetPriceChangeValue) + "%"
+                    if assetPriceChangeValue == 0 {
+                        self.assetPriceChange.textColor = .systemGray
+                    } else if assetPriceChangeValue > 0 {
+                        self.assetPriceChange.textColor = .systemGreen
+                    } else {
+                        self.assetPriceChange.textColor = .systemRed
+                    }
+                }
+                return
+            case .failure(let error):
+                return
+            }
         }
         
-        assetPriceChange.text =  String(format: "%.2f", assetPriceChangeValue) + "%"
-        if assetPriceChangeValue == 0 {
-            assetPriceChange.textColor = .systemGray
-        } else if assetPriceChangeValue > 0 {
-            assetPriceChange.textColor = .systemGreen
-        } else {
-            assetPriceChange.textColor = .systemRed
-        }
+//        assetName.text = asset.data.values.first?.name
+        
     }
 }
