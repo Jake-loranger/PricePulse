@@ -33,6 +33,8 @@
 		A190282B2C1A27C6007C3644 /* PPCellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */; };
 		A190282D2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */; };
 		A19028342C1DE0DD007C3644 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19028332C1DE0DD007C3644 /* FavoriteAsset.swift */; };
+		A19028362C1E49C1007C3644 /* PPAssetChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19028352C1E49C1007C3644 /* PPAssetChartView.swift */; };
+		A19028382C1F4922007C3644 /* HistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19028372C1F4922007C3644 /* HistoricalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCellTitleLabel.swift; sourceTree = "<group>"; };
 		A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCellPriceChangeTitle.swift; sourceTree = "<group>"; };
 		A19028332C1DE0DD007C3644 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
+		A19028352C1E49C1007C3644 /* PPAssetChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAssetChartView.swift; sourceTree = "<group>"; };
+		A19028372C1F4922007C3644 /* HistoricalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				A19028282C190FAB007C3644 /* PPAssetDetailView.swift */,
 				A190282A2C1A27C6007C3644 /* PPCellTitleLabel.swift */,
 				A190282C2C1A2F5A007C3644 /* PPCellPriceChangeTitle.swift */,
+				A19028352C1E49C1007C3644 /* PPAssetChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				A184D3DA2C161CA600AA81BD /* Asset.swift */,
 				A19028332C1DE0DD007C3644 /* FavoriteAsset.swift */,
+				A19028372C1F4922007C3644 /* HistoricalData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				A184D3D42C16199D00AA81BD /* UIViewControllers+Ext.swift in Sources */,
 				A184D3DB2C161CA600AA81BD /* Asset.swift in Sources */,
 				A184D3C82C14CC2700AA81BD /* PPFavoritesVC.swift in Sources */,
+				A19028382C1F4922007C3644 /* HistoricalData.swift in Sources */,
 				A190282B2C1A27C6007C3644 /* PPCellTitleLabel.swift in Sources */,
 				A184D3DD2C1623FA00AA81BD /* PPError.swift in Sources */,
 				A184D3CA2C16008400AA81BD /* PPTextField.swift in Sources */,
@@ -383,6 +390,7 @@
 				A184D3D02C160B4100AA81BD /* PPButton.swift in Sources */,
 				A184D3E52C17A2E900AA81BD /* PPFavoriteCell.swift in Sources */,
 				A184D3E72C18DB3500AA81BD /* PPTabBarController.swift in Sources */,
+				A19028362C1E49C1007C3644 /* PPAssetChartView.swift in Sources */,
 				A184D3962C14BB8100AA81BD /* SceneDelegate.swift in Sources */,
 				A184D39E2C14BB8100AA81BD /* PricePulse.xcdatamodeld in Sources */,
 			);

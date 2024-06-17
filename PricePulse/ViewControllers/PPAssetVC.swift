@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import SwiftUI
 
 class PPAssetVC: UIViewController {
     
     var assetName: String!
     let titleLabel = PPTitleLabel()
+    let chartView = PPAssetChartView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         fetchAssetData(for: assetName)
+        configureChartView(with: chartView)
     }
     
     
@@ -88,6 +91,22 @@ class PPAssetVC: UIViewController {
         }
     }
     
+    func configureChartView<V: View>(with view: V) {
+        let hostingController = UIHostingController(rootView: view)
+        addChild(hostingController)
+        self.view.addSubview(hostingController.view)
+        
+        // Set constraints for the hosting controller's view
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 420),
+            hostingController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100),
+            hostingController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            hostingController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
+        ])
+        
+        hostingController.didMove(toParent: self)
+    }
     
     func configureTitleLabel(name: String) {
         view.addSubview(titleLabel)

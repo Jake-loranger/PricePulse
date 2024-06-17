@@ -35,7 +35,7 @@ class PPAssetDetailView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.widthAnchor.constraint(equalToConstant: 170),
+            self.widthAnchor.constraint(equalToConstant: 160),
             self.heightAnchor.constraint(equalToConstant: 100)
         ])
     }

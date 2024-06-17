@@ -9,16 +9,15 @@ import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private let baseUrl = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
+    private let baseUrl = "https://pro-api.coinmarketcap.com"
     private let apiKey = "4b403583-4ed0-4b7c-91f2-8989ba68a154"
     
     private init() {}
     
     func getAssetData(for assetSymbol: String, completed: @escaping (Result<Asset, PPError>) -> Void) {
-        let endpoint = baseUrl + "?symbol=\(assetSymbol)"
+        let endpoint = baseUrl + "/v1/cryptocurrency/quotes/latest?symbol=\(assetSymbol)"
         
         guard let url = URL(string: endpoint) else {
-            print("at url")
             completed(.failure(.invalidAssetName))
             return
         }
